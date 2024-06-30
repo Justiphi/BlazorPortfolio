@@ -1,0 +1,80 @@
+﻿@page "/Experience"
+@using BlazorPortfolio.Data.Models
+
+<div className="col-md-8">
+
+    <h3>Experience: </h3>
+
+    @if (Qualifications == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        @if (Qualifications.Count > 0)
+        {
+            <div className='table-responsive'>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Qualification</th>
+                            <th>Awarded By</th>
+                            <th>Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var qualification in Qualifications)
+                        {
+                            <tr>
+                                <td>@qualification.Title</td>
+                                <td>@qualification.Location</td>
+                                <td>@qualification.Year</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    }
+
+    <h3>Projects: </h3>
+
+    @if (Projects == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        @if (Projects.Count > 0)
+        {
+            <div className='table-responsive'>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Qualification</th>
+                            <th>Awarded By</th>
+                            <th>Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var project in Projects)
+                        {
+                            <tr>
+                                <td>@project.Title</td>
+                                <td>@project.Languages</td>
+                                <td>@project.Framework</td>
+                                <td>@project.GithubLink</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    }
+
+</div>
+
+@code {
+    List<Qualification> Qualifications = new List<Qualification>();
+    List<Project> Projects = new List<Project>();
+}
