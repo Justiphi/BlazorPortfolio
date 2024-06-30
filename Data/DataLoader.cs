@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BlazorPortfolio.Data
 {
-    public class DataLoader
+    public static class DataLoader
     {
-        public List<Qualification> GetQualifications()
+        public static List<Qualification> GetQualifications()
         {
             List<Qualification> qualifications = new List<Qualification>();
 
@@ -14,10 +14,10 @@ namespace BlazorPortfolio.Data
                 qualifications = db.Qualifications.OrderByDescending(x => x.Year).ToList();
             }
 
-            return new List<Qualification>();
+            return qualifications;
         }
 
-        public List<Experience> GetExperience()
+        public static List<Experience> GetExperience()
         {
             List<Experience> experience = new List<Experience>();
 
@@ -26,10 +26,10 @@ namespace BlazorPortfolio.Data
                 experience = db.Experience.OrderByDescending(x => x.StartYear).ToList();
             }
 
-            return new List<Experience>();
+            return experience;
         }
 
-        public List<Project> GetProjects()
+        public static List<Project> GetProjects()
         {
             List<Project> projects = new List<Project>();
 
@@ -38,7 +38,7 @@ namespace BlazorPortfolio.Data
                 projects = db.Projects.OrderBy(x => x.Title).ToList();
             }
 
-            return new List<Project>();
+            return projects;
         }
 
     }
