@@ -7,13 +7,57 @@
 
     <h3>Experience: </h3>
 
-    @if (Qualifications == null)
+    @if (ExperienceList == null)
     {
         <p><em>Loading...</em></p>
     }
     else
     {
-        @if (Qualifications.Count > 0)
+        @if (ExperienceList.Count > 0)
+        {
+            <div className='table-responsive'>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Company</th>
+                            <th>Language(s)</th>
+                            <th>Framework(s)</th>
+                            <th>Start Year</th>
+                            <th>End Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var project in ExperienceList)
+                        {
+                            <tr>
+                                <td>@project.Title</td>
+                                <td>@project.Company</td>
+                                <td>@project.Languages</td>
+                                <td>@project.Framework</td>
+                                <td>@project.StartYear</td>
+                                <td>@project.EndYearDisplay</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    }
+
+    <br />
+    <br />
+    <br />
+
+    <h3>Qualifications: </h3>
+
+    @if (QualificationList == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        @if (QualificationList.Count > 0)
         {
             <div className='table-responsive'>
                 <table class="table">
@@ -25,7 +69,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var qualification in Qualifications)
+                        @foreach (var qualification in QualificationList)
                         {
                             <tr>
                                 <td>@qualification.Title</td>
@@ -39,49 +83,9 @@
         }
     }
 
-    <br />
-    <br />
-    <br />
-
-    <h3>Projects: </h3>
-
-    @if (Projects == null)
-    {
-        <p><em>Loading...</em></p>
-    }
-    else
-    {
-        @if (Projects.Count > 0)
-        {
-            <div className='table-responsive'>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Project</th>
-                            <th>Language(s)</th>
-                            <th>Framework(s)</th>
-                            <th>Code</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var project in Projects)
-                        {
-                            <tr>
-                                <td>@project.Title</td>
-                                <td>@project.Languages</td>
-                                <td>@project.Framework</td>
-                                <td><a href=@project.GithubLink target="_blank">(Github)</a></td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-        }
-    }
-
 </div>
 
 @code {
-    List<Qualification> Qualifications = DataLoader.GetQualifications();
-    List<Project> Projects = DataLoader.GetProjects();
+    List<Qualification> QualificationList = DataLoader.GetQualifications();
+    List<Data.Models.Experience> ExperienceList = DataLoader.GetExperience();
 }

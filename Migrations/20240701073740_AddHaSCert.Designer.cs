@@ -4,6 +4,7 @@ using BlazorPortfolio.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlazorPortfolio.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20240701073740_AddHaSCert")]
+    partial class AddHaSCert
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -168,8 +171,8 @@ namespace BlazorPortfolio.Migrations
                         new
                         {
                             ProjectId = 2,
-                            Description = "Previous web portfolio",
-                            Framework = "ASP.net, React",
+                            Description = "previous web portfolio",
+                            Framework = "ASP.net, ASP.net",
                             GithubLink = "https://github.com/Justiphi/Travis-CV",
                             Languages = "C#, TypeScript",
                             Title = "Web Portfolio"
@@ -186,7 +189,7 @@ namespace BlazorPortfolio.Migrations
                         new
                         {
                             ProjectId = 4,
-                            Description = "Code for pip boy prop",
+                            Description = "Code for Prop",
                             Framework = "PyGame",
                             GithubLink = "https://github.com/Justiphi/pipboy",
                             Languages = "Python",
@@ -195,38 +198,11 @@ namespace BlazorPortfolio.Migrations
                         new
                         {
                             ProjectId = 5,
-                            Description = "Azure based Voice Assistant (superseded by ADA-MKII)",
-                            Framework = "WPF, Avalonia",
+                            Description = "Azure based Voice Assistant",
+                            Framework = "WPF",
                             GithubLink = "https://github.com/Justiphi/Project-RIANTI",
                             Languages = "C#",
                             Title = "Project RIANTI"
-                        },
-                        new
-                        {
-                            ProjectId = 6,
-                            Description = "MTG dice and coin generator used for tutoring programming",
-                            Framework = "MAUI",
-                            GithubLink = "https://github.com/Justiphi/DiceApp",
-                            Languages = "C#",
-                            Title = "Dice & Coins"
-                        },
-                        new
-                        {
-                            ProjectId = 7,
-                            Description = "Voice Assistant",
-                            Framework = "MAUI",
-                            GithubLink = "https://github.com/Justiphi/ADA-MKII",
-                            Languages = "C#",
-                            Title = "ADA-MKII"
-                        },
-                        new
-                        {
-                            ProjectId = 8,
-                            Description = "Proof of concept Computer Vision application",
-                            Framework = "WPF",
-                            GithubLink = "https://github.com/Justiphi/peoplecounter",
-                            Languages = "C#",
-                            Title = "People Counter"
                         });
                 });
 

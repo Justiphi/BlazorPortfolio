@@ -1,0 +1,50 @@
+﻿@page "/Projects"
+@attribute [StreamRendering]
+@using BlazorPortfolio.Data
+@using BlazorPortfolio.Data.Models
+
+<div className="col-md-8">
+
+    <h3>Projects: </h3>
+
+    @if (ProjectList == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        @if (ProjectList.Count > 0)
+        {
+            <div className='table-responsive'>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Project</th>
+                            <th>Description</th>
+                            <th>Language(s)</th>
+                            <th>Framework(s)</th>
+                            <th>Code</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var project in ProjectList)
+                        {
+                            <tr>
+                                <td>@project.Title</td>
+                                <td>@project.Description</td>
+                                <td>@project.Languages</td>
+                                <td>@project.Framework</td>
+                                <td><a href=@project.GithubLink target="_blank">(Github)</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    }
+
+</div>
+
+@code {
+    List<Project> ProjectList = DataLoader.GetProjects();
+}

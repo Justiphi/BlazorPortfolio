@@ -4,6 +4,7 @@ using BlazorPortfolio.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlazorPortfolio.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20240701071848_InitialMigration")]
+    partial class InitialMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,9 +49,6 @@ namespace BlazorPortfolio.Migrations
                     b.Property<string>("Languages")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("SoftwareBased")
-                        .HasColumnType("bit");
-
                     b.Property<int?>("StartYear")
                         .IsRequired()
                         .HasColumnType("int");
@@ -67,9 +67,8 @@ namespace BlazorPortfolio.Migrations
                         {
                             ExperienceId = 1,
                             Company = "Radfords",
-                            Framework = "Windows Forms, Xamarin, WPF, Blazor, MAUI",
+                            Framework = "Windows Forms, Blazor, MAUI, Xamarin, WPF",
                             Languages = "C#, VB.net, SQL",
-                            SoftwareBased = true,
                             StartYear = 2022,
                             Title = "Developer"
                         },
@@ -80,7 +79,6 @@ namespace BlazorPortfolio.Migrations
                             EndYear = 2022,
                             Framework = "Windows Forms, Xamarin, WPF",
                             Languages = "C#, VB.net, SQL",
-                            SoftwareBased = true,
                             StartYear = 2020,
                             Title = "Junior Developer"
                         },
@@ -89,9 +87,8 @@ namespace BlazorPortfolio.Migrations
                             ExperienceId = 3,
                             Company = "Cucumber",
                             EndYear = 2019,
-                            Framework = "jQuery",
+                            Framework = "",
                             Languages = "JavaScript",
-                            SoftwareBased = true,
                             StartYear = 2019,
                             Title = "Junior Developer"
                         },
@@ -102,7 +99,6 @@ namespace BlazorPortfolio.Migrations
                             EndYear = 2020,
                             Framework = "N/A",
                             Languages = "N/A",
-                            SoftwareBased = false,
                             StartYear = 2016,
                             Title = "Kitchen Hand"
                         },
@@ -113,7 +109,6 @@ namespace BlazorPortfolio.Migrations
                             EndYear = 2013,
                             Framework = "N/A",
                             Languages = "N/A",
-                            SoftwareBased = false,
                             StartYear = 2009,
                             Title = "Paper Deliverer"
                         });
@@ -168,8 +163,8 @@ namespace BlazorPortfolio.Migrations
                         new
                         {
                             ProjectId = 2,
-                            Description = "Previous web portfolio",
-                            Framework = "ASP.net, React",
+                            Description = "previous web portfolio",
+                            Framework = "ASP.net, ASP.net",
                             GithubLink = "https://github.com/Justiphi/Travis-CV",
                             Languages = "C#, TypeScript",
                             Title = "Web Portfolio"
@@ -186,7 +181,7 @@ namespace BlazorPortfolio.Migrations
                         new
                         {
                             ProjectId = 4,
-                            Description = "Code for pip boy prop",
+                            Description = "Code for Prop",
                             Framework = "PyGame",
                             GithubLink = "https://github.com/Justiphi/pipboy",
                             Languages = "Python",
@@ -195,38 +190,11 @@ namespace BlazorPortfolio.Migrations
                         new
                         {
                             ProjectId = 5,
-                            Description = "Azure based Voice Assistant (superseded by ADA-MKII)",
-                            Framework = "WPF, Avalonia",
+                            Description = "Azure based Voice Assistant",
+                            Framework = "WPF",
                             GithubLink = "https://github.com/Justiphi/Project-RIANTI",
                             Languages = "C#",
                             Title = "Project RIANTI"
-                        },
-                        new
-                        {
-                            ProjectId = 6,
-                            Description = "MTG dice and coin generator used for tutoring programming",
-                            Framework = "MAUI",
-                            GithubLink = "https://github.com/Justiphi/DiceApp",
-                            Languages = "C#",
-                            Title = "Dice & Coins"
-                        },
-                        new
-                        {
-                            ProjectId = 7,
-                            Description = "Voice Assistant",
-                            Framework = "MAUI",
-                            GithubLink = "https://github.com/Justiphi/ADA-MKII",
-                            Languages = "C#",
-                            Title = "ADA-MKII"
-                        },
-                        new
-                        {
-                            ProjectId = 8,
-                            Description = "Proof of concept Computer Vision application",
-                            Framework = "WPF",
-                            GithubLink = "https://github.com/Justiphi/peoplecounter",
-                            Languages = "C#",
-                            Title = "People Counter"
                         });
                 });
 
@@ -291,13 +259,6 @@ namespace BlazorPortfolio.Migrations
                             Location = "University of Waikato",
                             Title = "Bachelors of Science, Major in Applied Computing",
                             Year = 2019
-                        },
-                        new
-                        {
-                            QualificationId = 6,
-                            Location = "EMA+",
-                            Title = "Certificate in Health and Safety Representation (Level 3)",
-                            Year = 2020
                         });
                 });
 #pragma warning restore 612, 618

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlazorPortfolio.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240630093151_DataProperties")]
-    partial class DataProperties
+    [Migration("20240701072724_ExperienceFilter")]
+    partial class ExperienceFilter
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,6 +49,9 @@ namespace BlazorPortfolio.Migrations
                     b.Property<string>("Languages")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool?>("SoftwareBased")
+                        .HasColumnType("bit");
+
                     b.Property<int?>("StartYear")
                         .IsRequired()
                         .HasColumnType("int");
@@ -69,6 +72,7 @@ namespace BlazorPortfolio.Migrations
                             Company = "Radfords",
                             Framework = "Windows Forms, Blazor, MAUI, Xamarin, WPF",
                             Languages = "C#, VB.net, SQL",
+                            SoftwareBased = true,
                             StartYear = 2022,
                             Title = "Developer"
                         },
@@ -79,6 +83,7 @@ namespace BlazorPortfolio.Migrations
                             EndYear = 2022,
                             Framework = "Windows Forms, Xamarin, WPF",
                             Languages = "C#, VB.net, SQL",
+                            SoftwareBased = true,
                             StartYear = 2020,
                             Title = "Junior Developer"
                         },
@@ -86,10 +91,11 @@ namespace BlazorPortfolio.Migrations
                         {
                             ExperienceId = 3,
                             Company = "Cucumber",
-                            EndYear = 2022,
-                            Framework = "",
+                            EndYear = 2019,
+                            Framework = "jQuery",
                             Languages = "JavaScript",
-                            StartYear = 2020,
+                            SoftwareBased = true,
+                            StartYear = 2019,
                             Title = "Junior Developer"
                         },
                         new
@@ -99,6 +105,7 @@ namespace BlazorPortfolio.Migrations
                             EndYear = 2020,
                             Framework = "N/A",
                             Languages = "N/A",
+                            SoftwareBased = false,
                             StartYear = 2016,
                             Title = "Kitchen Hand"
                         },
@@ -109,6 +116,7 @@ namespace BlazorPortfolio.Migrations
                             EndYear = 2013,
                             Framework = "N/A",
                             Languages = "N/A",
+                            SoftwareBased = false,
                             StartYear = 2009,
                             Title = "Paper Deliverer"
                         });

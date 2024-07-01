@@ -9,6 +9,7 @@
         public int? EndYear { get; set; }
         public string? Languages { get; set; }
         public string? Framework { get; set; }
+        public bool? SoftwareBased { get; set; }
 
         public int EndYearDisplay
         {

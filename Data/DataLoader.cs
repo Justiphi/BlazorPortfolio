@@ -17,16 +17,23 @@ namespace BlazorPortfolio.Data
             return qualifications;
         }
 
-        public static List<Experience> GetExperience()
+        public static List<Experience> GetExperience(bool includeAll = false)
         {
-            List<Experience> experience = new List<Experience>();
+            List<Experience> experienceList;
 
             using(var db = new DataContext())
             {
-                experience = db.Experience.OrderByDescending(x => x.StartYear).ToList();
+                IQueryable<Experience> experience = db.Experience.OrderByDescending(x => x.StartYear);
+
+                if (!includeAll)
+                {
+                    experience = experience.Where(x => x.SoftwareBased == true);
+                }
+
+                experienceList = experience.ToList();
             }
 
-            return experience;
+            return experienceList;
         }
 
         public static List<Project> GetProjects()
