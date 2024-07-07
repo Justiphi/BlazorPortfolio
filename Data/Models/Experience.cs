@@ -11,17 +11,17 @@
         public string? Framework { get; set; }
         public bool? SoftwareBased { get; set; }
 
-        public int EndYearDisplay
+        public string EndYearDisplay
         {
             get
             {
                 if(EndYear == null)
                 {
-                    return DateTime.Now.Year;
+                    return "Current";
                 }
                 else
                 {
-                    return EndYear.Value;
+                    return EndYear.Value.ToString();
                 }
             } 
         }

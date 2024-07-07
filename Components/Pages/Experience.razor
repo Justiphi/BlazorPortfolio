@@ -1,11 +1,22 @@
 ﻿@page "/Experience"
 @attribute [StreamRendering]
+@rendermode InteractiveServer
 @using BlazorPortfolio.Data
 @using BlazorPortfolio.Data.Models
 
 <div className="col-md-8">
 
-    <h3>Experience: </h3>
+    <div class="row">
+        <div class="col">
+            <h3>Employment History: </h3>
+        </div>
+        <div class="col align-content-center">
+            <div class="form-check form-switch float-end">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" @bind-value="ShowAllEmployment" />
+                <label class="form-check-label" for="flexSwitchCheckChecked">Show Non-Technical</label>
+            </div>
+        </div>
+    </div>
 
     @if (ExperienceList == null)
     {
@@ -86,6 +97,27 @@
 </div>
 
 @code {
+    private bool _showAllEmployment;
+    public bool ShowAllEmployment
+    {
+        get
+        {
+            return _showAllEmployment;
+        }
+        set
+        {
+            _showAllEmployment = value;
+            ExperienceList = DataLoader.GetExperience(value);
+        }
+    }
+
+    private void SwitchChanged(bool value)
+    {
+        ShowAllEmployment = value; // this is mandatory
+    }
+
+
+
     List<Qualification> QualificationList = DataLoader.GetQualifications();
     List<Data.Models.Experience> ExperienceList = DataLoader.GetExperience();
 }
