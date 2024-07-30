@@ -33,7 +33,7 @@ namespace BlazorPortfolio.Data
             //loads configuration from _config.json file into memory
             var config = JsonConvert.DeserializeObject<ConfigModel>(System.IO.File.ReadAllText(file));
 
-            if (config != null)
+            if (config == null)
             {
                 throw new ApplicationException("Could not parse config file");
             }
