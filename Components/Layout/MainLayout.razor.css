@@ -15,6 +15,11 @@ main {
     background-color: #252526;
 }
 
+.footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
 .top-row {
     background-color: #252526;
     border-bottom: 2px solid #3E3E40;
