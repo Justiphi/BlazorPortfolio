@@ -70,7 +70,8 @@ namespace BlazorPortfolio.Data
                 new Qualification() { QualificationId = 3, Title = "Skills for Entrepeneurs (Level 7)", Location = "Toi Ohomai", Year = 2018 },
                 new Qualification() { QualificationId = 4, Title = "Diploma in Software Development (Level 6)", Location = "Toi Ohomai", Year = 2018 },
                 new Qualification() { QualificationId = 5, Title = "Bachelors of Science, Major in Applied Computing", Location = "University of Waikato", Year = 2019 },
-                new Qualification() { QualificationId = 6, Title = "Certificate in Health and Safety Representation (Level 3)", Location = "EMA+", Year = 2020 }
+                new Qualification() { QualificationId = 6, Title = "Certificate in Health and Safety Representation (Level 3)", Location = "EMA+", Year = 2020 },
+                new Qualification() { QualificationId = 7, Title = "Foundational C# with Microsoft", Location = "FreeCodeCamp", Year = 2024 }
                 );
 
 
