@@ -56,7 +56,7 @@ namespace BlazorPortfolio.Data
                 new Experience() { ExperienceId = 4, Title = "Kitchen Hand", Company = "The Raft", Framework = "N/A", Languages = "N/A", StartYear = 2016, EndYear = 2020, SoftwareBased = false },
                 new Experience() { ExperienceId = 5, Title = "Paper Deliverer", Company = "Bay of Plenty Times", Framework = "N/A", Languages = "N/A", StartYear = 2009, EndYear = 2013, SoftwareBased = false },
                 new Experience() { ExperienceId = 6, Title = "Full Stack Developer", Company = "Radfords", Framework = "Windows Forms, Xamarin, WPF, Blazor, MAUI", Languages = "C#, VB.net, SQL", StartYear = 2020, EndYear = 2024, SoftwareBased = true },
-                new Experience() { ExperienceId = 7, Title = "Solution Engineer", Company = "Emydex Technology", Framework = "Windows Forms", Languages = "C#, SQL", StartYear = 2024, EndYear = null, SoftwareBased = true }
+                new Experience() { ExperienceId = 7, Title = "Solution Engineer", Company = "Emydex Technology", Framework = "Windows Forms", Languages = "C#, SQL", StartYear = 2024, EndYear = 2026, SoftwareBased = true }
                 );
 
 
