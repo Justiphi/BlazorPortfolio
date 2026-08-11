@@ -21,7 +21,7 @@
   <ItemGroup>
     <Content Update="wwwroot/racoon.png">
       <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
+      <PackagePath>/</PackagePath>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
