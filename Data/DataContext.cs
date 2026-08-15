@@ -78,14 +78,15 @@ namespace BlazorPortfolio.Data
             modelBuilder.Entity<Project>().Property(p => p.GithubLink).HasMaxLength(100).IsRequired(false);
 
             modelBuilder.Entity<Project>().HasData(
-                new Project() { ProjectId = 1, Title = "Blazor Portfolio", Description = "Current web portfolio", Framework = "Blazor", Languages = "C#", GithubLink = "https://github.com/Justiphi/BlazorPortfolio" },
-                new Project() { ProjectId = 2, Title = "Web Portfolio", Description = "Previous web portfolio", Framework = "ASP.net, React", Languages = "C#, TypeScript", GithubLink = "https://github.com/Justiphi/Travis-CV" },
-                new Project() { ProjectId = 3, Title = "Tatenashi", Description = "Discord Bot", Framework = "Dotnet Core", Languages = "C#", GithubLink = "https://github.com/Justiphi/Tatenashi" },
-                new Project() { ProjectId = 4, Title = "Pip Boy", Description = "Code for pip boy prop", Framework = "PyGame", Languages = "Python", GithubLink = "https://github.com/Justiphi/pipboy" },
-                new Project() { ProjectId = 5, Title = "Project RIANTI", Description = "Azure based Voice Assistant (superseded by ADA-MKII)", Framework = "WPF, Avalonia", Languages = "C#", GithubLink = "https://github.com/Justiphi/Project-RIANTI" },
-                new Project() { ProjectId = 6, Title = "Dice & Coins", Description = "MTG dice and coin generator used for tutoring programming", Framework = "MAUI", Languages = "C#", GithubLink = "https://github.com/Justiphi/DiceApp" },
-                new Project() { ProjectId = 7, Title = "ADA-MKII", Description = "Voice Assistant", Framework = "MAUI", Languages = "C#", GithubLink = "https://github.com/Justiphi/ADA-MKII" },
-                new Project() { ProjectId = 8, Title = "People Counter", Description = "Proof of concept Computer Vision application", Framework = "WPF", Languages = "C#", GithubLink = "https://github.com/Justiphi/peoplecounter" }
+                new Project() { ProjectId = 1, Title = "Blazor Portfolio", Description = "Current web portfolio", Framework = "Blazor", Languages = "C#", GithubLink = "https://github.com/Justiphi/BlazorPortfolio", Active = true },
+                new Project() { ProjectId = 2, Title = "Web Portfolio", Description = "Previous web portfolio", Framework = "ASP.net, React", Languages = "C#, TypeScript", GithubLink = "https://github.com/Justiphi/Travis-CV", Active = false },
+                new Project() { ProjectId = 3, Title = "Tatenashi", Description = "Discord Bot", Framework = "Dotnet Core", Languages = "C#", GithubLink = "https://github.com/Justiphi/Tatenashi", Active = false },
+                new Project() { ProjectId = 4, Title = "Pip Boy", Description = "Code for pip boy prop", Framework = "PyGame", Languages = "Python", GithubLink = "https://github.com/Justiphi/pipboy", Active = true },
+                new Project() { ProjectId = 5, Title = "Project RIANTI", Description = "Azure based Voice Assistant (superseded by ADA-MKII)", Framework = "WPF, Avalonia", Languages = "C#", GithubLink = "https://github.com/Justiphi/Project-RIANTI", Active = false },
+                new Project() { ProjectId = 6, Title = "Dice & Coins", Description = "MTG dice and coin generator used for tutoring programming", Framework = "MAUI", Languages = "C#", GithubLink = "https://github.com/Justiphi/DiceApp", Active = true },
+                new Project() { ProjectId = 7, Title = "ADA-MKII", Description = "Voice Assistant", Framework = "MAUI", Languages = "C#", GithubLink = "https://github.com/Justiphi/ADA-MKII", Active = true },
+                new Project() { ProjectId = 8, Title = "People Counter", Description = "Proof of concept Computer Vision application", Framework = "WPF", Languages = "C#", GithubLink = "https://github.com/Justiphi/peoplecounter", Active = false },
+                new Project() { ProjectId = 9, Title = "React Portfolio", Description = "Current web portfolio made with react", Framework = "React", Languages = "JavaScript", GithubLink = "https://github.com/Justiphi/reactportfolio", Active = true }
                 );
         }
     }

@@ -42,7 +42,7 @@ namespace BlazorPortfolio.Data
 
             using(var db = new DataContext())
             {
-                projects = db.Projects.OrderBy(x => x.Title).ToList();
+                projects = db.Projects.OrderByDescending(x => x.Active).ThenBy(x => x.Title).ToList();
             }
 
             return projects;

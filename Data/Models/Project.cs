@@ -8,5 +8,6 @@
         public string? Languages { get; set; }
         public string? Framework { get; set; }
         public string? GithubLink { get; set; }
+        public bool? Active { get; set; }
     }
 }
