@@ -26,6 +26,7 @@
                             <th>Language(s)</th>
                             <th>Framework(s)</th>
                             <th>Code</th>
+                            <th>Link</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,6 +38,16 @@
                                 <td>@project.Languages</td>
                                 <td>@project.Framework</td>
                                 <td><a href=@project.GithubLink target="_blank">(Github)</a></td>
+                                <td>
+                                    @if(project.ProjectLink != null) 
+                                    {
+                                        <a href=@project.ProjectLink target="_blank">(link)</a>
+                                    }
+                                    else
+                                    {
+                                        <span>(no link)</span>
+                                    }
+                                </td>
                             </tr>
                         }
                     </tbody>
